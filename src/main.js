@@ -74,7 +74,7 @@ import * as filters from './filters'; // global filters modalTemplates
 import settings from '@/setting';
 const messages = ['success', 'warning', 'info', 'error'];
 messages.forEach((type) => {
-  Element.Message[type] = (options) => {
+  Element.Message[type] = (options = {}) => {
     if (typeof options === 'string') {
       options = {
         message: options,

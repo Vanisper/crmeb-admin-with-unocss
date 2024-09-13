@@ -88,7 +88,7 @@ service.interceptors.response.use(
     }
   },
   (error) => {
-    Message.error(error.msg);
+    Message.error(error.msg || error.toString());
     return Promise.reject(error);
   },
 );
