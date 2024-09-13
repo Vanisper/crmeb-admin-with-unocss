@@ -95,6 +95,8 @@ function createSocket(key) {
     wsKefuSocketUrl = res.data.chat;
     setCookies('WS_ADMIN_URL', res.data.admin);
     setCookies('WS_CHAT_URL', res.data.chat);
+  }).catch((err) => {
+    console.error("获取wsSocket信息失败", err.message || err.msg || err);
   });
   return new Promise((resolve, reject) => {
     const ws = new wsSocket({

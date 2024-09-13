@@ -396,6 +396,7 @@ export default {
 
 .containerSamll {
   /* width: 56% !important; */
+  max-width: 768px !important;
   background: #fff !important;
 }
 

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import loadingCss from '@/theme/loading.scss';
+import * as loadingCss from '@/theme/loading.scss';
 
 // 定义方法
 export const PrevLoading = {

@@ -60,6 +60,10 @@ import pagesHeader from '@/components/pagesHeader';
 import vuescroll from 'vuescroll'; // 移动端滚动插件
 import VueClipboard from 'vue-clipboard2'; // 复制到粘贴板插件
 
+// 引入Uno.css
+import '@unocss/reset/tailwind.css'
+import 'uno.css'
+
 // 全局组件挂载
 Vue.component('Pagination', Pagination);
 Vue.component('pagesHeader', pagesHeader);
@@ -164,7 +168,21 @@ Object.keys(filters).forEach((key) => {
 // 添加crmeb chat 统计
 var __s = document.createElement('script');
 __s.src = `${location.origin}/api/get_script`;
-document.head.appendChild(__s);
+var __s = document.createElement('script');
+var scriptUrl = `${location.origin}/api/get_script`;
+// 校验 scriptUrl 是否可访问
+fetch(scriptUrl, { method: 'HEAD' })
+  .then(response => {
+    if (response.ok) {
+      __s.src = scriptUrl;
+      document.head.appendChild(__s);
+    } else {
+      console.error('Script URL is not accessible:', scriptUrl);
+    }
+  })
+  .catch(error => {
+    console.error('Error checking script URL:', error);
+  });
 
 /* eslint-disable no-new */
 new Vue({
