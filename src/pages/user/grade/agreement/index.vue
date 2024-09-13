@@ -63,7 +63,7 @@ export default {
           this.id = id;
         })
         .catch((err) => {
-          this.$message.error(err);
+          this.$message.error(err.msg || err.message);
           this.spinShow = false;
         });
     },
@@ -75,7 +75,7 @@ export default {
           this.memberAgreement();
         })
         .catch((err) => {
-          this.$message.error(err);
+          this.$message.error(err.msg || err.message);
         });
     },
   },

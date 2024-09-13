@@ -583,7 +583,7 @@ export default {
             this.getList();
           })
           .catch((err) => {
-            this.$message.error(err);
+            this.$message.error(err.msg || err.message);
           });
       } else {
         setUser(data)

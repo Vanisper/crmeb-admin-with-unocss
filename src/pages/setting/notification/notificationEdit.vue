@@ -385,7 +385,7 @@ export default {
           this.$message.success('设置成功');
         })
         .catch((err) => {
-          this.$message.error(err);
+          this.$message.error(err.msg || err.message);
         });
     },
     handleReset(name) {

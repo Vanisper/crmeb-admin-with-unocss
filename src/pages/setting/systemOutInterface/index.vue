@@ -551,7 +551,7 @@ export default {
           }
         })
         .catch((err) => {
-          this.$message.error(err);
+          this.$message.error(err.msg || err.message);
         });
     },
     onClick(params) {
@@ -562,7 +562,7 @@ export default {
             this.formValidate = res.data;
           })
           .catch((err) => {
-            this.$message.error(err);
+            this.$message.error(err.msg || err.message);
           });
       }
     },
@@ -584,7 +584,7 @@ export default {
           this.getInterfaceList();
         })
         .catch((err) => {
-          this.$message.error(err);
+          this.$message.error(err.msg || err.message);
         });
     },
     async insertEvent(type) {
@@ -696,7 +696,7 @@ export default {
           this.getInterfaceList();
         })
         .catch((err) => {
-          this.$message.error(err);
+          this.$message.error(err.msg || err.message);
         });
     },
     //侧边栏右键点击事件
@@ -802,7 +802,7 @@ export default {
             node.remove();
           })
           .catch((err) => {
-            this.$message.error(err);
+            this.$message.error(err.msg || err.message);
           });
       }).catch(() => {
 
@@ -820,7 +820,7 @@ export default {
             this.$message.success(res.msg);
           })
           .catch((err) => {
-            this.$message.error(err);
+            this.$message.error(err.msg || err.message);
           });
       }
     },

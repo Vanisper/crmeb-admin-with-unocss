@@ -172,7 +172,7 @@ export default {
           this.login_captcha = data.login_captcha;
         })
         .catch((err) => {
-          this.$message.error(err);
+          this.$message.error(err.msg || err.message);
           this.login_logo = require('@/assets/images/logo.png');
           this.swiperList = [{ slide: this.defaultSwiperList }];
         });

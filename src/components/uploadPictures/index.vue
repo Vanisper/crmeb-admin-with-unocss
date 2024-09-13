@@ -339,7 +339,7 @@ export default {
               node.remove();
             })
             .catch((err) => {
-              this.$message.error(err);
+              this.$message.error(err.msg || err.message);
             });
         })
         .catch(() => {});
@@ -356,7 +356,7 @@ export default {
             this.$message.success(res.msg);
           })
           .catch((err) => {
-            this.$message.error(err);
+            this.$message.error(err.msg || err.message);
           });
       }
     },

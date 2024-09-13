@@ -182,7 +182,7 @@ export default {
         })
         .catch((err) => {
           this.loading = false;
-          this.$message.error(err);
+          this.$message.error(err.msg || err.message);
         });
     },
     // 改变状态

@@ -381,7 +381,7 @@ export default {
           this.qrcodeImg = res.data.image;
         })
         .catch((err) => {
-          this.$message.error(err);
+          this.$message.error(err.msg || err.message);
         });
     },
     preview(row) {

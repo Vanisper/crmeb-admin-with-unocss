@@ -140,7 +140,7 @@ export default {
           })
           .catch((err) => {
             this.spinShow = false;
-            this.$message.error(err);
+            this.$message.error(err.msg || err.message);
           });
       });
     },
